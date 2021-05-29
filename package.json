@@ -31,6 +31,5 @@
    "scripts": {
       "dev": "ts-node-dev --transpile-only --ignore-watch node_modules src/server.ts",
       "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js"
-
    }
 }

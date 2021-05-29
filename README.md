@@ -1,7 +1,3 @@
-# Awesome Project Build with TypeORM
+# marvel_app_api
 
-Steps to run this project:
-
-1. Run `npm i` command
-2. Setup database settings inside `ormconfig.json` file
-3. Run `npm start` command
+1. `npm install` ou `yarn install` para instalar os pacotes da aplicação

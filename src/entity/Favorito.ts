@@ -1,5 +1,4 @@
-import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, JoinColumn } from "typeorm";
-import Usuario from "./Usuario";
+import { Entity, Column, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity('favoritos')
 export default class Favorito {
