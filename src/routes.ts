@@ -11,6 +11,7 @@ routes.put('/favoritos/:id', FavoritoController.update);
 
 routes.get('/usuarios', UsuarioController.index);
 routes.get('/usuarios/:id', UsuarioController.show);
+routes.post('/usuarios/login', UsuarioController.login);
 routes.post('/usuarios', UsuarioController.create);
 routes.put('/usuarios/:id', UsuarioController.update);
 

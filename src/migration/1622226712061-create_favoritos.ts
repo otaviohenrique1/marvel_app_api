@@ -30,7 +30,7 @@ export class createFavoritos1622226712061 implements MigrationInterface {
             },
             {
               name: 'favorite',
-              type: 'boolean'
+              type: 'bool'
             },
             {
               name: 'category',
