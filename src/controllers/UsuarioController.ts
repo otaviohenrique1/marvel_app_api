@@ -6,17 +6,18 @@ import usuarioView from "../views/usuario_view";
 
 export default {
   async login(request: Request, response: Response) {
-    const { username, password } = request.body;
+    const { email, senha } = request.body;
     let existingUser;
     const usuarioRepository = getRepository(Usuario);
     try {
-      existingUser = await usuarioRepository.findOne({ email: username });
+      existingUser = await usuarioRepository.findOne({ email: email });
     } catch (error) {
       const mensagemErro = "Login falhou, tente novamente mais tarde";
       return response.status(500).json({ message: mensagemErro });
     }
-    if (!existingUser || existingUser.senha !== password) {
+    if (!existingUser || existingUser.senha !== senha) {
       const mensagemErro = "Dados invalidos";
+      console.log(`${email}, ${senha}`);
       return response.status(401).json({ message: mensagemErro });
     }
     return response.status(200).json({ message: "Logado com sucesso!" });
