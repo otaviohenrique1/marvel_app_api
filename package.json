@@ -5,8 +5,7 @@
    "keywords": [
       "Node",
       "Typescript",
-      "Express",
-      "Sqlite3"
+      "Express"
    ],
    "author": "Otavio Henrique",
    "license": "ISC",
