@@ -20,25 +20,13 @@ export default {
       console.log(`${email}, ${senha}`);
       return response.status(401).json({ message: mensagemErro });
     }
-    return response.status(200).json({ message: "Logado com sucesso!" });
+    let dataUser = {
+      id: existingUser.id,
+      nome: existingUser.nome,
+      email: existingUser.email,
+    };
+    return response.status(200).json({ message: "Logado com sucesso!", dataUser });
   },
-
-  // async login2 (req: Request, res: Response, next) {
-  //   const { email, password } = req.body;
-  //   let existingUser;
-  //   try {
-  //     existingUser = await User.findOne({ email: email });
-  //   } catch (err) {
-  //     const error = new HttpError("Login failed, please try again later.", 500);
-  //     return next(error);
-  //   }
-  //   if (!existingUser || existingUser.password !== password) {
-  //     const error = new HttpError("Invalid credentials, login failed.", 401);
-  //     return next(error);
-  //   }
-  //   res.json({ message: "Logged in!" });
-  // },
-
   async index(request: Request, response: Response) {
     const usuarioRepository = getRepository(Usuario);
     const usuarios = await usuarioRepository.find();
@@ -83,3 +71,19 @@ export default {
     return response.status(201).json(usuario);
   },
 };
+
+// async login2 (req: Request, res: Response, next) {
+//   const { email, password } = req.body;
+//   let existingUser;
+//   try {
+//     existingUser = await User.findOne({ email: email });
+//   } catch (err) {
+//     const error = new HttpError("Login failed, please try again later.", 500);
+//     return next(error);
+//   }
+//   if (!existingUser || existingUser.password !== password) {
+//     const error = new HttpError("Invalid credentials, login failed.", 401);
+//     return next(error);
+//   }
+//   res.json({ message: "Logged in!" });
+// },
