@@ -3,6 +3,7 @@ import Favorito from "../entity/Favorito";
 export default {
   render(favorito: Favorito) {
     return {
+      id: favorito.id,
       nome: favorito.name,
       favorite: favorito.favorite,
       category: favorito.category,

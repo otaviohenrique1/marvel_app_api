@@ -36,11 +36,11 @@ export default {
     /* Verifica se o favorito existe */
     const { user_id, item_id } = request.params;
     const favoritoRepository = getRepository(Favorito);
-    const favorito = await favoritoRepository.findOneOrFail({
-      where: [
-        { user_id: user_id },
-        { item_id: item_id },
-      ]
+    const favorito = await favoritoRepository.find({
+      where: {
+        user_id: user_id,
+        item_id: item_id
+      }
     });
     return response.json(favorito);
   },
